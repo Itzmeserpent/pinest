@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=480, height=320, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PiNest Smart Hub</title>
+  <link rel="stylesheet" href="pinest.css">
+</head>
+<body>
+
+  <!-- Particle Canvas Background -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Lock Screen -->
+  <div id="lockScreen" class="screen active">
+    <div class="lock-container">
+      <div class="lock-logo">
+        <div class="logo-icon pulsing">π</div>
+        <h1 class="glitch" data-text="PiNest">PiNest</h1>
+      </div>
+      <div class="passcode-display">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div class="error-message" id="errorMessage">Incorrect passcode</div>
+      <div class="keypad">
+        <button class="key-btn" data-key="1">1</button>
+        <button class="key-btn" data-key="2">2</button>
+        <button class="key-btn" data-key="3">3</button>
+        <button class="key-btn" data-key="4">4</button>
+        <button class="key-btn" data-key="5">5</button>
+        <button class="key-btn" data-key="6">6</button>
+        <button class="key-btn" data-key="7">7</button>
+        <button class="key-btn" data-key="8">8</button>
+        <button class="key-btn" data-key="9">9</button>
+        <button class="key-btn clear" data-key="clear">✕</button>
+        <button class="key-btn" data-key="0">0</button>
+        <button class="key-btn enter" data-key="enter">✓</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Dashboard -->
+  <div id="dashboard" class="screen">
+    <div class="ripple-container" id="rippleContainer"></div>
+    <div class="header">
+      <div class="header-logo">
+        <span class="logo-symbol">π</span>
+        <span class="logo-text">PiNest</span>
+      </div>
+      <div class="header-time" id="headerTime">12:00</div>
+    </div>
+
+    <div class="dashboard-grid">
+      <button class="dashboard-btn" data-action="settings">
+        <div class="btn-icon">⚙</div>
+        <div class="btn-label">Settings</div>
+      </button>
+      <button class="dashboard-btn" data-action="wifi">
+        <div class="btn-icon">📡</div>
+        <div class="btn-label">Wi-Fi</div>
+      </button>
+      <button class="dashboard-btn" data-action="sensors">
+        <div class="btn-icon">🌡</div>
+        <div class="btn-label">Sensors</div>
+      </button>
+      <button class="dashboard-btn" data-action="system">
+        <div class="btn-icon">💻</div>
+        <div class="btn-label">System</div>
+      </button>
+      <button class="dashboard-btn" data-action="weather">
+        <div class="btn-icon">☁</div>
+        <div class="btn-label">Weather</div>
+      </button>
+      <button class="dashboard-btn" data-action="schedule">
+        <div class="btn-icon">📅</div>
+        <div class="btn-label">Schedule</div>
+      </button>
+    </div>
+
+    <button class="lock-btn" id="lockBtn">🔒 Lock</button>
+  </div>
+
+  <!-- Settings Panel -->
+  <div id="settingsPanel" class="screen">
+    <div class="header">
+      <button class="back-btn" id="backBtn">← Back</button>
+      <div class="header-title">Settings</div>
+    </div>
+
+    <div class="settings-content">
+      <div class="setting-item">
+        <div class="setting-label">
+          <span class="setting-icon">☀</span>
+          <span>Brightness</span>
+        </div>
+        <input type="range" class="slider" id="brightnessSlider" min="0" max="100" value="75">
+        <span class="setting-value" id="brightnessValue">75%</span>
+      </div>
+
+      <div class="setting-item">
+        <div class="setting-label">
+          <span class="setting-icon">🔊</span>
+          <span>Volume</span>
+        </div>
+        <input type="range" class="slider" id="volumeSlider" min="0" max="100" value="50">
+        <span class="setting-value" id="volumeValue">50%</span>
+      </div>
+
+      <div class="setting-item">
+        <div class="setting-label">
+          <span class="setting-icon">🌙</span>
+          <span>Night Mode</span>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="nightModeToggle">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-item">
+        <div class="setting-label">
+          <span class="setting-icon">🔔</span>
+          <span>Notifications</span>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="notificationsToggle" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <script src="pinest.js"></script>
+</body>
+</html>
