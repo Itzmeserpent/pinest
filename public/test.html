@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=480, height=320, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PiNest Test</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: monospace;
+      background: #1a1a1a;
+      color: #0f0;
+    }
+    .test {
+      border: 1px solid #0f0;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    iframe {
+      border: 2px solid #00d4ff;
+      display: block;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>PiNest Interface Test</h1>
+  <div class="test">
+    <p>✓ HTML loaded</p>
+    <p id="css-test">Testing CSS...</p>
+    <p id="js-test">Testing JavaScript...</p>
+  </div>
+
+  <h2>Interface Preview:</h2>
+  <iframe src="pinest.html" width="480" height="320"></iframe>
+
+  <script>
+    document.getElementById('css-test').textContent = '✓ CSS loaded';
+    document.getElementById('js-test').textContent = '✓ JavaScript loaded';
+
+    console.log('Test page loaded successfully');
+  </script>
+</body>
+</html>
